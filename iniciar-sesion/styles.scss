@@ -1,16 +1,29 @@
-$blanco:rgb(255, 255, 255);
+$blanco:rgb(255, 255, 255); // variables en scss
+
+/* Heredar propiedades desde otra clase 1 */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+/* Mixin (funciona con un include) */
+@mixin name {
+  //propiedades de name
+}
 
 body {
   margin: 0;
   font-family: 'Muli', sans-serif;
 }
 .header {
-  align-items: center;
+  /*display: flex;
+  align-items: center;*/
+  @extend .flex; // 1 estoy incluyendo los propiedades declaradas en .flex dentro de esta clase 
+  @include name; //aquí estaría incluyendo las propieades declaradas en el mixin "name"
+  justify-content: space-between;
   background-color: #21c08b;
   color: $blanco;
-  display: flex;
   height: 100px;
-  justify-content: space-between;
   top: 0px;
   width: 100%;
 }
